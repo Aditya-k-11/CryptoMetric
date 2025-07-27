@@ -1,57 +1,115 @@
-.ex-cards{
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    margin-top: 5rem;
-    font-size: 20px;
-    font-weight: bold;
+.ex-cards {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-top: 5rem;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 1rem 2rem;
+  background-color: #000;
+  color: white;
+  border-bottom: 1px solid #333;
 }
 
-.name{
-    width: 7rem;
-}
-.price{
-    width: 7rem;
-}
-.rank{
-    width: 7rem;
+.ex-header {
+  margin-top: 2rem;
+  color: orange;
+  border-bottom: 2px solid orange;
+  font-size: 22px;
+  font-weight: bold;
+  background-color: #111;
 }
 
-.btns button{
-   height: 2rem;
-   background-color: orange;
-   border: none;
-   margin-left: 30px;
-   width: 5rem;
-   border-radius: 10px;
-   margin-top: 60px;
+
+.image {
+  width: 80px;
+  display: flex;
+  justify-content: center;
 }
-.btns{
-    margin-left: 12rem;
+
+.name {
+  width: 7rem;
+  text-align: center;
+}
+
+.price {
+  width: 7rem;
+  text-align: center;
+}
+
+.rank {
+  width: 7rem;
+  text-align: center;
+}
+
+
+.btns button {
+  height: 2rem;
+  background-color: orange;
+  border: none;
+  margin-left: 30px;
+  width: 5rem;
+  border-radius: 10px;
+  margin-top: 60px;
+}
+
+.btns {
+  margin-left: 12rem;
+}
+
+
+.controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.controls input,
+.controls select {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border-radius: 6px;
+  border: 1px solid #f0a101;
+  outline: none;
 }
 
 
 @media only screen and (max-width: 600px) {
-  .image img{
-    height: 50px;
-    margin-left: 40px;
-    margin-right: 20px;
+  .ex-cards {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 15px;
+    margin-top: 2rem;
+    text-align: center;
   }
-    .name{
-       font-size: 15px;
-       width: 10rem;
-    }
-    .price{
-      font-size: 15px;
-      width:  10rem;
-    }
-    .rank{
-     font-size: 15px;
-    }
-    .ex-cards{
-        display: flex;
-        justify-content: space-between;
-    }
-    
 
+  .image img {
+    height: 50px;
+    margin-bottom: 10px;
+  }
+
+  .name,
+  .price,
+  .rank {
+    width: 100%;
+    margin: 0.2rem 0;
+  }
+
+  .ex-header {
+    display: none; 
+  }
+
+  .controls {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .controls input,
+  .controls select {
+    width: 100%;
+  }
 }

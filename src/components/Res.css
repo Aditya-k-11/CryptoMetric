@@ -1,25 +1,149 @@
-.search-bar input{
-    height: 2rem;
-    width: 20rem;
-    position: fixed;
-    top: 1%;
-    left: 35%;
-    padding-left: 5px;
+.search-bar input {
+  height: 1.5rem;
+  width: 95%;
+  max-width: 400px;
+  position: fixed;
+  top: 1%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding-left: 10px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  z-index: 1000;
+}
+
+.btns {
+  margin-top: 100px;
+  text-align: center;
+}
+
+.btns button {
+  margin: 0 10px;
+  padding: 8px 16px;
+  font-size: 1rem;
+  background-color: orange;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btns button:hover {
+  background-color: rgba(252, 157, 5, 0.845);
+}
+
+.table-header {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr 1fr 1fr;
+  width: 100vw; 
+  margin: 40px 0 10px 0; 
+  padding: 12px 10px; 
+  background-color: #222;
+  color: gold;
+  font-weight: bold;
+  border-radius: 0; 
+  text-align: center;
+  font-size: 1rem;
+}
+
+.coin-row {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr 1fr 1fr;
+  align-items: center;
+  background-color: #111;
+  color: white;
+  margin: 10px 0; 
+  padding: 16px 10px; 
+  border-radius: 0; 
+  width: 100vw; 
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.08);
+  transition: transform 0.2s ease;
+  text-align: center;
+}
+
+.coin-row:hover {
+  transform: translateY(-4px);
 }
 
 
-.btns{
-    
-    margin-top: 100px;
+.coin-cell {
+  font-size: 1rem;
+}
+
+.rank-cell {
+  font-weight: bold;
+  color: gold;
+}
+
+.name-cell {
+  font-weight: bold;
+  color: white;
+}
+
+.icon-cell img {
+  height: 50px;
+  width: 50px;
+  object-fit: contain;
+}
+
+
+.price-cell {
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.change-cell {
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.change-cell.profit {
+  color: #4caf50; 
+}
+
+.change-cell.loss {
+  color: #e53935; 
 }
 
 @media only screen and (max-width: 600px) {
-.search-bar input{
+  .search-bar input {
     position: fixed;
     top: 10%;
-    left: 7%;
-}
-.btns{
+    left: 50%;
+    width: 90%;
+    max-width: none;
+    transform: translateX(-50%);
+  }
+
+  .btns {
     margin-left: 10px;
-}
+    margin-top: 130px;
+  }
+
+  .table-header {
+    display: none;
+  }
+
+  .coin-row {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    padding: 20px;
+    gap: 10px;
+    width: 90%;
+    max-width: none;
+  }
+
+  .icon-cell img {
+    height: 40px;
+    width: 40px;
+  }
+
+  .coin-cell {
+    font-size: 1.1rem;
+  }
 }

@@ -2,13 +2,17 @@ import React from 'react'
 import './Header.css'
 import { Link } from 'react-router-dom'
 import { FaEthereum } from "react-icons/fa"
+
 const Header = () => {
   return (
-    <div className='navbar' >
-        <div className="logo">
-            <h1>CryptoVerse </h1>
-            <FaEthereum color='orange' size={"25"} /> 
+    <div className='navbar'>
+      <div className="logo">
+        
+        <div className="logo-crypto">
+          <h1>CryptoMetric</h1>
+          <FaEthereum className="eth-icon" />
         </div>
+      </div>
       <ul>
         <li> <Link to='/' >Home</Link> </li>
         <li> <Link to='/coins'>Coins</Link></li>
@@ -18,4 +22,3 @@ const Header = () => {
 }
 
 export default Header
-
