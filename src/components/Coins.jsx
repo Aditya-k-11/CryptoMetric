@@ -62,7 +62,7 @@ const Coins = () => {
           {/* Coin List */}
           {coins
             .filter((data) =>
-              data.name.toLowerCase().includes(search.toLowerCase())
+              data.name?.toLowerCase().includes(search.toLowerCase())
             )
             .map((coindata, i) => (
               <CoinCard
@@ -91,13 +91,13 @@ const CoinCard = ({ coindata, currencySymbol, i, id }) => {
           <img src={coindata.image} alt={coindata.name} />
         </div>
         <div className="coin-cell price-cell">
-          {currencySymbol} {coindata.current_price.toFixed(0)}
+          {currencySymbol} {coindata.current_price?.toFixed(0) || 0}
         </div>
         <div
           className={`coin-cell change-cell ${profit ? 'profit' : 'loss'}`}
         >
           {profit ? '+' : ''}
-          {coindata.price_change_percentage_24h.toFixed(2)}%
+          {coindata.price_change_percentage_24h?.toFixed(2) || 0}%
         </div>
       </div>
     </Link>

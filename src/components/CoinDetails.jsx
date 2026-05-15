@@ -11,6 +11,7 @@ import CoinChart from './CoinChart'
 const CoinDetails = () => {
   const [coin, setCoin] = useState([])
   const [loading, setLoading] = useState(true)
+  const [error, setError] = useState(false)
   const { id } = useParams()
   const [currency, setCurrency] = useState('inr')
 
@@ -25,6 +26,7 @@ const CoinDetails = () => {
         setLoading(false)
       } catch (error) {
         console.log(error)
+        setError(true)
         setLoading(false)
       }
     }
@@ -33,8 +35,13 @@ const CoinDetails = () => {
 
   return (
     <>
-      {
-        loading ? <Loader /> : (
+      {loading ? (
+        <Loader />
+      ) : error || !coin.market_data ? (
+        <div style={{ color: 'red', textAlign: 'center', marginTop: '100px', fontSize: '2rem' }}>
+          Error fetching coin details. Please try again later.
+        </div>
+      ) : (
           <div className='coin-detail'>
             <div className='coin-info'>
               <div className='btn'>
@@ -78,7 +85,7 @@ const CoinDetails = () => {
               </div>
 
               <div className='coin-desc'>
-                <p>{coin.description['en']?.split('.')[0]}</p>
+                <p>{coin.description?.en?.split('.')[0]}</p>
               </div>
             </div>
 
